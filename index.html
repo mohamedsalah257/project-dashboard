@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeraisy Riyadh House - Flowchart Phase 1</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 30px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+        }
+        
+        .info-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .info-box strong {
+            font-size: 1.2em;
+        }
+        
+        .chart-container {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            overflow-x: auto;
+            margin-bottom: 30px;
+        }
+        
+        .mermaid {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .legend {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+        }
+        
+        .legend h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            text-align: center;
+        }
+        
+        .legend-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .legend-item {
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .legend-icon {
+            font-size: 1.5em;
+        }
+        
+        .leg-start {
+            background: #667eea;
+            color: white;
+        }
+        
+        .leg-process {
+            background: #f093fb;
+            color: white;
+        }
+        
+        .leg-opportunity {
+            background: #4facfe;
+            color: white;
+        }
+        
+        .leg-quotation {
+            background: #43e97b;
+            color: white;
+        }
+        
+        .leg-decision {
+            background: #fee140;
+            color: #2c3e50;
+            border: 3px solid #f39c12;
+        }
+        
+        .leg-lost {
+            background: #ff6b6b;
+            color: white;
+        }
+        
+        .leg-integration {
+            background: #a8edea;
+            color: #2c3e50;
+            border: 3px dashed #9b59b6;
+        }
+        
+        .leg-oracle {
+            background: #ff6348;
+            color: white;
+        }
+        
+        .leg-complete {
+            background: #56ab2f;
+            color: white;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background: #ecf0f1;
+            border-radius: 10px;
+            color: #7f8c8d;
+        }
+        
+        .footer strong {
+            color: #2c3e50;
+            font-size: 1.1em;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            .subtitle {
+                font-size: 1em;
+            }
+            .legend-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏢 Jeraisy Riyadh House</h1>
+            <div class="subtitle">Sales Workflow - Phase 1 Integration</div>
+        </div>
+        
+        <div class="info-box">
+            <strong>📊 Odoo ↔ Oracle Integration Flow</strong><br>
+            This flowchart represents Phase 1 of the integration between Odoo and Oracle systems
+        </div>
+        
+        <div class="chart-container">
+            <div class="mermaid">
+graph TB
+    Start([<b>🎯 START: CRM Module</b>])
+    Lead[<b>📋 CREATE LEAD</b><br/><i>by Sales Person</i>]
+    Activities[<b>🔄 ACTIVITIES</b><br/><i>Follow-ups & Meetings</i>]
+    Opp[<b>💼 OPPORTUNITY</b><br/><i>Qualified Lead</i>]
+    Tasks[<b>📝 TASKS & DOCS</b><br/><i>• Measurements<br/>• Preliminary Drawings<br/>• AutoCAD Files</i>]
+    
+    Decision{<b>⚖️ DECISION</b><br/><br/>Won or Lost?}
+    
+    Lost([<b>❌ LOST</b><br/><i>End Process</i>])
+    
+    SQ[<b>📄 SALES QUOTATION</b><br/><i>Product Type Definition:<br/>- Stock Item<br/>- Non-Stock Item</i>]
+    
+    Approvals[<b>✍️ APPROVALS</b><br/><i>Management Review</i>]
+    
+    Versions{<b>📑 VERSIONS</b><br/><br/>Multiple?}
+    
+    Approved{<b>✅ APPROVED?</b><br/><br/>Final Decision}
+    
+    SO[<b>📦 SALES ORDER</b><br/><i>Confirmed on Odoo</i>]
+    
+    Integration[<b>🔄 INTEGRATION</b><br/><i>Phase 1 Boundary<br/>Send SO to Oracle</i>]
+    
+    Oracle[<b>🏛️ ORACLE SYSTEM</b><br/><i>Create Sales Order</i>]
+    
+    Complete([<b>✅ PHASE 1 COMPLETE</b><br/><i>Continue on Oracle</i>])
+    
+    Start --> Lead
+    Lead --> Activities
+    Activities --> Opp
+    Opp --> Tasks
+    Tasks --> Decision
+    
+    Decision -->|<b>❌ LOST</b>| Lost
+    Decision -->|<b>✅ WON</b>| SQ
+    
+    SQ --> Approvals
+    Approvals --> Versions
+    
+    Versions -->|Yes| SQ
+    Versions -->|No| Approved
+    
+    Approved -->|<b>❌ NO</b>| Lost
+    Approved -->|<b>✅ YES</b>| SO
+    
+    SO --> Integration
+    Integration --> Oracle
+    Oracle --> Complete
+    
+    classDef startClass fill:#667eea,stroke:#5568d3,stroke-width:4px,color:#fff,font-weight:bold
+    classDef processClass fill:#f093fb,stroke:#d67ee0,stroke-width:3px,color:#fff,font-weight:bold
+    classDef opportunityClass fill:#4facfe,stroke:#3a96e8,stroke-width:3px,color:#fff,font-weight:bold
+    classDef quotationClass fill:#43e97b,stroke:#32d469,stroke-width:3px,color:#fff,font-weight:bold
+    classDef decisionClass fill:#fee140,stroke:#e5ca39,stroke-width:4px,color:#2c3e50,font-weight:bold
+    classDef lostClass fill:#ff6b6b,stroke:#ee5a52,stroke-width:4px,color:#fff,font-weight:bold
+    classDef integrationClass fill:#a8edea,stroke:#8ed9d5,stroke-width:4px,color:#2c3e50,font-weight:bold
+    classDef oracleClass fill:#ff6348,stroke:#e55439,stroke-width:3px,color:#fff,font-weight:bold
+    classDef completeClass fill:#56ab2f,stroke:#469125,stroke-width:5px,color:#fff,font-weight:bold
+    
+    class Start startClass
+    class Lead,Activities processClass
+    class Opp,Tasks opportunityClass
+    class SQ,Approvals,SO quotationClass
+    class Decision,Versions,Approved decisionClass
+    class Lost lostClass
+    class Integration integrationClass
+    class Oracle oracleClass
+    class Complete completeClass
+            </div>
+        </div>
+        
+        <div class="legend">
+            <h3>🎨 دليل الألوان والمراحل</h3>
+            <div class="legend-grid">
+                <div class="legend-item leg-start">
+                    <span class="legend-icon">🎯</span>
+                    <span>البداية - CRM Module</span>
+                </div>
+                <div class="legend-item leg-process">
+                    <span class="legend-icon">🔄</span>
+                    <span>عمليات CRM - Lead & Activities</span>
+                </div>
+                <div class="legend-item leg-opportunity">
+                    <span class="legend-icon">💼</span>
+                    <span>فرصة نشطة - Opportunity & Tasks</span>
+                </div>
+                <div class="legend-item leg-quotation">
+                    <span class="legend-icon">📄</span>
+                    <span>عروض وأوامر - Quotation & SO</span>
+                </div>
+                <div class="legend-item leg-decision">
+                    <span class="legend-icon">⚖️</span>
+                    <span>نقاط القرار - Decision Points</span>
+                </div>
+                <div class="legend-item leg-lost">
+                    <span class="legend-icon">❌</span>
+                    <span>خسارة - Lost Opportunity</span>
+                </div>
+                <div class="legend-item leg-integration">
+                    <span class="legend-icon">🔄</span>
+                    <span>تكامل - Odoo to Oracle</span>
+                </div>
+                <div class="legend-item leg-oracle">
+                    <span class="legend-icon">🏛️</span>
+                    <span>نظام Oracle</span>
+                </div>
+                <div class="legend-item leg-complete">
+                    <span class="legend-icon">✅</span>
+                    <span>اكتمال المرحلة الأولى</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <strong>📌 ملاحظة مهمة:</strong><br>
+            هذا الـ Flowchart يمثل المرحلة الأولى فقط من التكامل<br>
+            المرحلة الثانية ستشمل العمليات الكاملة على Odoo (Delivery, Invoice, etc.)
+        </div>
+    </div>
+    
+    <script>
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+    </script>
+</body>
+</html>
